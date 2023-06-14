@@ -1,16 +1,18 @@
 pipeline {
-    agent any
-    
-    stages {
-        stage('Hello') {
-            steps {
-                echo 'Hello World'
-            }
-        }
-        stage('docker_ps') {
-            steps {
-                sh 'docker ps'
-            }
-        }
+  agent any
+  stages {
+    stage('Hello') {
+      steps {
+        echo 'Hello World'
+        sh 'sh echo "Shell"'
+      }
     }
+
+    stage('docker_ps') {
+      steps {
+        sh 'docker ps'
+      }
+    }
+
+  }
 }

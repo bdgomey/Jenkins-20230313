@@ -3,16 +3,9 @@ pipeline {
   stages {
     stage('Hello') {
       steps {
-        echo 'Hello World'
-        sh 'echo "Shell"'
+        sh 'docker build -t bjgomes/jenkins-pipeline .'
+        sh 'docker push bjgomes/jenkins-pipeline'
       }
     }
-
-    stage('docker_ps') {
-      steps {
-        sh 'docker ps'
-      }
-    }
-
   }
 }
